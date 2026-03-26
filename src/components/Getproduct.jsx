@@ -1,6 +1,6 @@
 import axios from 'axios'
-import react, { useState, useEffect } from 'react'
-import { use } from 'react'
+import React, { useState, useEffect } from 'react'
+
 import{ useNavigate} from 'react-router-dom'
 import Carousel from './Carousel'
  const Getproduct = () => {
@@ -17,6 +17,8 @@ import Carousel from './Carousel'
             setProduct(response.data)
             setLoading("")
         } catch (error) {
+            setError(error.message)
+            setLoading("")
             
         }
     }

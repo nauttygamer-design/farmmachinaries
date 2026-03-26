@@ -13,7 +13,7 @@ const[password,setPassword]=useState("")
 //  three states for posting data 
 const[loading,setLoading]=useState("")
 const[success,setSuccess]=useState("")
-const[error,seterror]=useState("")
+const[error,setError]=useState("")
 // funtion to hundlr submit 
 const hundlesubmit=async(e)=>{
     e.preventDefault()
@@ -41,6 +41,8 @@ const hundlesubmit=async(e)=>{
 
         }
     } catch (error) {
+        setError(error.message)
+            setLoading("")
         
     }
 
